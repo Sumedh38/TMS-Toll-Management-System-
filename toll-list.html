@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toll Management System</title>
+    <link rel="stylesheet" href="toll-list.css" />
+    <script
+      src="https://kit.fontawesome.com/5f5a245de9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body onload="initTollData()">
+    <div class="main-container">
+      <h2>Toll Management System</h2>
+      <hr />
+      <div class="heading">
+        <div class="heading-left">
+          <h2>Toll entries/vehicle entries |</h2>
+
+          <div class="search_box">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+            <input
+              type="text"
+              name=""
+              placeholder="Search Toll Name"
+              id="input"
+              class="searchTollName"
+              onkeyup="searchVehicleNumber()"
+            />
+          </div>
+          <div class="btn-section">
+            <div class="add_btn">
+              <button class="button button1" id="modal-el" >Add vehicle entry</button>
+              <div id="my-btn" class="modal1">
+    <div class="modal-content1" id="modalContent1">
+      <div class="modal-header1">
+        <span class="close1">&times;</span>
+        <h2>Add New Entry</h2>
+        <div>
+          <label for="fname" id="stype">Select Toll Name</label><br>
+          <div class="vtype">
+            <select name="Vehicles" id="t-type">
+                <option value="default">Select Toll Name</option>
+            </select>
+            </div>
+            <label for="fname" id="stype">Select Vehicle Type</label><br>
+                      <div class="vtype">
+                        <select name="Vehicles" id="Vtypes">
+                          <option value="volvo">Select Vehicle Type</option>
+                            <option value="volvo">Car/Jeep/Van</option>
+                            <option value="saab">LCV</option>
+                            <option value="mercedes">Truck/Bus</option>
+                            <option value="audi">Heavy Vehicle</option>
+                        </select>
+                      </div>
+                      <div class="v-input">
+                        <label class="vname">
+                          Vechile Numeber
+                        </label><br>
+                      <input type="text" class="v-no" id="vehicleNo" name="fname">
+                      </div>
+                      <div class="v-input">
+                        <label class="vname">
+                          Tariff
+                        </label><br>
+                        <input type="text" class="v-no" id="tariff" name="fname">
+                      </div>
+    
+           <input type="submit" value="Submit" id="submit" onclick="handleOnVehicleEntry()">
+		      </div>
+      </div>
+    </div>            
+  </div>
+              <button class="button button2" id="modal-btn" >Add New Toll</button>
+              <div id="my-modal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Add New Toll</h2> </div>
+                    <div style="background-color:white;">
+                      <label for="fname" id="toll-name">Toll Name</label><br />
+                      <input type="text" id="toll-name1" name="fname" />
+                      <br class="inputs-1">
+                        <label for="fname" id="vehicle-details">Vehicle fare details</label></br>
+                        <select name="Vehicles" id="Vehicles">
+                          <option value="volvo">Select Vehicle Type</option>
+                          <option value="volvo">Car/Jeep/Van</option>
+                          <option value="saab">LCV</option>
+                          <option value="mercedes">Truck/Bus</option>
+                          <option value="audi">Heavy vehicle</option>
+                        </select>
+                        <input type="text" class="input-1" id="CsingleJ" name="fname" placeholder="Single Journey"/>
+                        <input type="text" class="input-1" id="CreturnJ" name="fname" placeholder="Return Journey" />             
+                      <div class="inputs-1">
+                        <select name="Vehicles" id="Vehicles">
+                          <option value="volvo">Select Vehicle Type</option>
+                          <option value="volvo">Car/Jeep/Van</option>
+                          <option value="saab">LCV</option>
+                          <option value="mercedes">Truck/Bus</option>
+                          <option value="audi">Heavy vehicle</option>
+                        </select>
+                        <input type="text" class="input-1" id="LsingleJ" name="fname" placeholder="Single Journey" />
+                        <input type="text" class="input-1" id="LreturnJ" name="fname"  placeholder="Return Journey" />
+                      </div>
+                      <div class="inputs-1">
+                        <select name="Vehicles" id="Vehicles">
+                          <option value="volvo">Select Vehicle Type</option>
+                          <option value="volvo">Car/Jeep/Van</option>
+                          <option value="saab">LCV</option>
+                          <option value="mercedes">Truck/Bus</option>
+                          <option value="audi">Heavy vehicle</option>
+                        </select>
+                        <input type="text" class="input-1" id="TsingleJ" name="fname" placeholder="Single Journey"  />
+                        <input type="text" class="input-1" id="TreturnJ" name="fname" placeholder="Return Journey"  />
+                      </div>
+                      <div class="inputs-1">
+                        <select name="Vehicles" id="Vehicles">
+                          <option value="volvo">Select Vehicle Type</option>
+                          <option value="volvo">Car/Jeep/Van</option>
+                          <option value="saab">LCV</option>
+                          <option value="mercedes">Truck/Bus</option>
+                          <option value="audi">Heavy vehicle</option>
+                        </select>
+                        <input type="text" class="input-1" id="HVsingleJ" name="fname" placeholder="Single Journey" />
+                        <input type="text" class="input-1" id="HVreturnJ" name="fname" placeholder="Return Journey"  />
+                      </div>
+                      <input type="submit" value="Submit" id="submit" onclick="handleOnTollEntry()"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="/index.html"><button  class="button button3" >Back to vehicle logs</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <table id="tollTable" class="table">
+        <tr>
+          <th>Toll Nmae</th>
+          <th>Car/Jeep/Bus</th>
+          <th>LCV</th>
+          <th>Truck/Bus</th>
+          <th>Heavy Vehicle</th>
+          <th></th>
+        </tr>
+      </table>
+    </div>
+    <script src="toll-list.js"></script>
+  </body>
+</html>
+
